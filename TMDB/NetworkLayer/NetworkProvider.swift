@@ -39,7 +39,7 @@ extension NetworkProvider: TargetType {
     }
     
     var headers: [String : String]? {
-        return ["Content-Type": "application/json", "Authorization" : "Bearer \(Credentials.shared.getAPIKey())"]
+        return ["Content-Type": "application/json", "Authorization" : "Bearer \(Credentials.shared.getAPIReadAccessToken())"]
     }
     
     

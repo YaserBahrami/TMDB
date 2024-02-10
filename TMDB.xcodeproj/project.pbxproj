@@ -19,6 +19,10 @@
 		43233AC52B77D0B5008F03DB /* TMDBUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43233AC42B77D0B5008F03DB /* TMDBUITestsLaunchTests.swift */; };
 		43233AD92B77DFB8008F03DB /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43233AD82B77DFB8008F03DB /* Credentials.swift */; };
 		43233ADB2B77DFF5008F03DB /* PredefinedConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43233ADA2B77DFF5008F03DB /* PredefinedConstants.swift */; };
+		43233ADD2B77E4DC008F03DB /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43233ADC2B77E4DC008F03DB /* Result.swift */; };
+		43233ADF2B77E55D008F03DB /* TVShowModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43233ADE2B77E55D008F03DB /* TVShowModel.swift */; };
+		43233AE12B7802FC008F03DB /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43233AE02B7802FC008F03DB /* NetworkProvider.swift */; };
+		43233AE32B780584008F03DB /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43233AE22B780584008F03DB /* NetworkService.swift */; };
 		51E016F0EEBEDD26AD26FE56 /* Pods_TMDBTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5757469C0CCB3D409E4370E6 /* Pods_TMDBTests.framework */; };
 		9556A00573304EC108E286DD /* Pods_TMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F6BEF8B5094D86299B1B63BF /* Pods_TMDB.framework */; };
 /* End PBXBuildFile section */
@@ -59,6 +63,10 @@
 		43233AC42B77D0B5008F03DB /* TMDBUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		43233AD82B77DFB8008F03DB /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		43233ADA2B77DFF5008F03DB /* PredefinedConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredefinedConstants.swift; sourceTree = "<group>"; };
+		43233ADC2B77E4DC008F03DB /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		43233ADE2B77E55D008F03DB /* TVShowModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShowModel.swift; sourceTree = "<group>"; };
+		43233AE02B7802FC008F03DB /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
+		43233AE22B780584008F03DB /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		5757469C0CCB3D409E4370E6 /* Pods_TMDBTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMDBTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5AACD16488D78B439923CD96 /* Pods_TMDB_TMDBUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMDB_TMDBUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		935B02DD828221E88461EAC8 /* Pods-TMDB-TMDBUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMDB-TMDBUITests.debug.xcconfig"; path = "Target Support Files/Pods-TMDB-TMDBUITests/Pods-TMDB-TMDBUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +187,8 @@
 		43233AD12B77D477008F03DB /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				43233ADC2B77E4DC008F03DB /* Result.swift */,
+				43233ADE2B77E55D008F03DB /* TVShowModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -200,6 +210,8 @@
 		43233AD42B77D49F008F03DB /* NetworkLayer */ = {
 			isa = PBXGroup;
 			children = (
+				43233AE02B7802FC008F03DB /* NetworkProvider.swift */,
+				43233AE22B780584008F03DB /* NetworkService.swift */,
 			);
 			path = NetworkLayer;
 			sourceTree = "<group>";
@@ -452,10 +464,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				43233ADD2B77E4DC008F03DB /* Result.swift in Sources */,
 				43233AA62B77D0B0008F03DB /* ViewController.swift in Sources */,
 				43233AA22B77D0B0008F03DB /* AppDelegate.swift in Sources */,
 				43233ADB2B77DFF5008F03DB /* PredefinedConstants.swift in Sources */,
+				43233AE32B780584008F03DB /* NetworkService.swift in Sources */,
 				43233AD92B77DFB8008F03DB /* Credentials.swift in Sources */,
+				43233AE12B7802FC008F03DB /* NetworkProvider.swift in Sources */,
+				43233ADF2B77E55D008F03DB /* TVShowModel.swift in Sources */,
 				43233AA42B77D0B0008F03DB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -642,6 +658,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -671,6 +688,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
