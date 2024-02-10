@@ -7,6 +7,7 @@ target 'TMDB' do
 
   # Pods for TMDB
 pod 'Moya/RxSwift', '~> 15.0'
+pod 'SwiftyJSON', '~> 4.0'
   
 
   target 'TMDBTests' do
