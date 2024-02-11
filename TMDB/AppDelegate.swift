@@ -16,9 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         let window = UIWindow(frame: UIScreen.main.bounds)
-        let root = MovieListViewController()
-        
-        window.rootViewController = UINavigationController(rootViewController: root)
+//        let root = MovieListViewController()
+        let movieListViewController = MovieListViewController()
+        let navigationController = UINavigationController(rootViewController: movieListViewController)
+
+        window.rootViewController = navigationController
         window.makeKeyAndVisible()
         self.window = window
         return true

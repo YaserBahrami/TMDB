@@ -29,6 +29,13 @@ class MovieListViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
     private func setupTableView() {
         view.addSubview(tableView)
         tableView.register(MovieTableViewCell.self, forCellReuseIdentifier: "MovieCell")
@@ -55,8 +62,26 @@ class MovieListViewController: UIViewController {
             .subscribe(onNext: { [weak self] selectedMovie in
                 // Handle selection if needed
                 print("Selected Movie: \(selectedMovie.title)")
+                self?.viewModel.selectedMovie.onNext(selectedMovie)
+                
             })
             .disposed(by: disposeBag)
+        
+        viewModel.selectedMovie
+            .subscribe(onNext: { [weak self] movie in
+                self?.navigateToMovieDetails(movie: movie)
+            })
+            .disposed(by: disposeBag)
+    }
+    
+    func navigateToMovieDetails(movie: Movie) {
+        guard let navigationController = navigationController else {
+                print("Navigation controller is nil")
+                return
+            }
+        let movieDetailsViewModel = MovieDetailsViewModel(movie: movie)
+        let movieDetailsViewController = MovieDetailsViewController(viewModel: movieDetailsViewModel)
+        navigationController.pushViewController(movieDetailsViewController, animated: false)
     }
     
     

@@ -12,7 +12,8 @@ import RxCocoa
 
 class MovieListViewModel {
     private let disposeBag = DisposeBag()
-//    var movies: PublishSubject<[Movie]> = PublishSubject()
+    
+    let selectedMovie = PublishSubject<Movie>()
     
     private let moviesSubject = BehaviorSubject<[Movie]>(value: [])
     var movies: Observable<[Movie]> {
