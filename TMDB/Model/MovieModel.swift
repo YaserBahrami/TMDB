@@ -37,15 +37,5 @@ struct Movie: Codable {
         case adult
     }
     
-//    init(json: JSON) {
-//        id = json["id"].intValue
-//        title = json["name"].stringValue
-//        overView = json["overview"].stringValue
-//        poster = json["poster_path"].stringValue
-//        voteAverage = json["vote_average"].doubleValue
-//        releaseDate = json["first_air_date"].stringValue
-//        isAdult = json["adult"].boolValue
-//    }
-    
 }
 
