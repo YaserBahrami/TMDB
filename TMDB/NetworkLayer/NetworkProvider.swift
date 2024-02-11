@@ -10,6 +10,7 @@ import Moya
 
 enum NetworkProvider {
     case popularTVShows
+    case popularMovies(page: Int)
 }
 
 extension NetworkProvider: TargetType {
@@ -21,12 +22,16 @@ extension NetworkProvider: TargetType {
         switch self {
         case .popularTVShows:
             return "tv/popular"
+        case .popularMovies:
+            return "tv/popular"
         }
     }
     
     var method: Moya.Method {
         switch self {
         case .popularTVShows:
+            return .get
+        case .popularMovies:
             return .get
         }
     }
@@ -35,6 +40,9 @@ extension NetworkProvider: TargetType {
         switch self {
         case .popularTVShows:
             return .requestParameters(parameters: [:], encoding: URLEncoding.default)
+            
+        case .popularMovies(let page):
+            return .requestParameters(parameters: ["api_key": "\(Credentials.shared.getAPIKey)", "page": page], encoding: URLEncoding.queryString)
         }
     }
     

@@ -39,8 +39,9 @@ class MovieListViewController: UIViewController {
         }
         
         // Enable automatic row height
-                tableView.rowHeight = UITableView.automaticDimension
-                tableView.estimatedRowHeight = 200 // Adjust the estimated row height as needed
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 200 // Adjust the estimated row height as needed
+        tableView.delegate = self
     }
     
     private func bindViewModel() {
@@ -59,5 +60,15 @@ class MovieListViewController: UIViewController {
     }
     
     
+}
+
+extension MovieListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        let lastRowIndex = tableView.numberOfRows(inSection: 0) - 1
+        if indexPath.row == lastRowIndex {
+            // Fetch next page when reaching the end of the table view
+            viewModel.fetchMovies()
+        }
+    }
 }
    
