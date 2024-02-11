@@ -10,7 +10,8 @@ import RxSwift
 
 class MovieListViewModel {
     private let disposeBag = DisposeBag()
-    var movies: PublishSubject<[Movie]> = PublishSubject()
+//    var movies: PublishSubject<[Movie]> = PublishSubject()
+    var movies = PublishSubject<[Movie]>()
     
     func fetchMovies() {
 

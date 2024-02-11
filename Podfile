@@ -8,6 +8,8 @@ target 'TMDB' do
   # Pods for TMDB
   pod 'Moya/RxSwift', '~> 15.0'
   pod 'SnapKit'
+  pod 'RxCocoa', '6.6.0'
+  pod 'AlamofireImage', '~> 4.3'
 
   target 'TMDBTests' do
     inherit! :search_paths
