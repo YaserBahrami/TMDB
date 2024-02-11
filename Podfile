@@ -6,8 +6,8 @@ target 'TMDB' do
   use_frameworks!
 
   # Pods for TMDB
-pod 'Moya/RxSwift', '~> 15.0'
-  
+  pod 'Moya/RxSwift', '~> 15.0'
+  pod 'SnapKit'
 
   target 'TMDBTests' do
     inherit! :search_paths
