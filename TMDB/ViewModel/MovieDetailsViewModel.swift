@@ -11,11 +11,14 @@ import Moya
 import RxCocoa
 
 class MovieDetailsViewModel {
-    private let disposeBag = DisposeBag()
-    private let movie: Movie
+    
+    private let movieDetailsSubject = BehaviorSubject<Movie?>(value: nil)
+    var movieDetails: Observable<Movie?> {
+        return movieDetailsSubject.asObservable()
+    }
     
     init(movie: Movie) {
-        self.movie = movie
+        self.movieDetailsSubject.onNext(movie)
     }
     
 }
